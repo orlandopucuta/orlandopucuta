@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    height: 500px;
+    background-image: url("images/diw.svg");
+    background-size: cover;
+    background-position: center;
+    color: black;
+    position: relative;
+}
+
+nav {
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero-text {
+    position: absolute;
+    top: 150px;
+    left: 7%;
+    max-width: 700px;
+}
+
+.hero-text h1 {
+    font-size: 45px;
+}
+
+.hero-text p {
+    font-size: 18px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+
+.projetos {
+    background-color: beige;
+    padding: 60px 7%;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    width: 30%;
+}
+
+.card a {
+    color: black;
+}
+
+
+.disciplina {
+    padding: 60px 7%;
+    display: flex;
+    gap: 50px;
+}
+
+.texto {
+    width: 50%;
+}
+
+.wordcloud {
+    width: 50%;
+    background-color: lightgray;
+    padding: 30px;
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        height: 600px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hero-text {
+        top: 150px;
+        left: 30px;
+        right: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 35px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .disciplina {
+        flex-direction: column;
+    }
+
+    .texto,
+    .wordcloud {
+        width: 100%;
+    }
+
+}

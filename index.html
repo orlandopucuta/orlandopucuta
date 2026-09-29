@@ -1,36 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O meu primeiro site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <h1>O meu primeiro site</h1>
+    <section id="inicio" class="hero">
 
-    <p>Eis a minha primeira página Web</p>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#disciplina">Interfaces Web</a></li>
+            </ul>
+        </nav>
 
-    <p>
-        Na Unidade Curricular de Desenvolvimento de Interfaces Web
-        abordamos as seguintes tecnologias Web:
-    </p>
+        <div class="hero-text">
+            <h1>O meu primeiro site</h1>
 
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React e Next.js</li>
-    </ul>
+            <p>
+                Bem-vindo ao meu espaço Web! Aqui podes conhecer
+                os meus projetos e o meu trabalho na disciplina
+                de Desenvolvimento de Interfaces Web.
+            </p>
 
-    <p>Iremos criar soluções criativas!</p>
+            <a class="botao" href="#projetos">Ver os meus projetos</a>
+        </div>
 
-    <nav>
-        <ul>
-            <li><a href="lab1/index.html">Lab1</a></li>
-            <li><a href="lab2/index.html">Lab2</a></li>
-        </ul>
-    </nav>
+    </section>
+
+
+    <section id="projetos" class="projetos">
+
+        <h2>Projetos</h2>
+
+        <p>
+            Nesta secção podes consultar os trabalhos que realizei
+            ao longo da disciplina.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Laboratório 1</h3>
+                <p>Estrutura básica e semântica.</p>
+                <a href="lab1/index.html">Ver Lab 1</a>
+            </div>
+
+            <div class="card">
+                <h3>Laboratório 2</h3>
+                <p>Estilos e layout responsivo.</p>
+                <a href="lab2/index.html">Ver Lab 2</a>
+            </div>
+
+            <div class="card">
+                <h3>Laboratório 3</h3>
+                <p>Landing page e design responsivo.</p>
+                <a href="lab3/index.html">Ver Lab 3</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="disciplina" class="disciplina">
+
+        <div class="texto">
+
+            <h2>Interfaces Web</h2>
+
+            <p>
+                Na Unidade Curricular de Desenvolvimento de Interfaces
+                Web abordamos várias tecnologias Web.
+            </p>
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React e Next.js</li>
+            </ul>
+
+            <p>
+                Iremos criar soluções criativas!
+            </p>
+
+        </div>
+
+        <div class="wordcloud">
+            <h2>Web Design</h2>
+            <p>HTML • CSS • JavaScript • Web • Design</p>
+            <p>Interfaces • Responsivo • Criatividade</p>
+        </div>
+
+    </section>
 
 </body>
 </html>

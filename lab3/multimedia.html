@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimédia - Almada</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .fotografias {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .fotografias img {
+            width: 150px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>A minha cidade</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>Multimédia</h2>
+
+        <section>
+            <h3>Fotografias</h3>
+
+            <p>Algumas imagens da cidade de Almada:</p>
+
+            <div class="fotografias">
+
+                <img src="images/almada1.jpg" alt="Rio Tejo">
+                <img src="images/almada2.jpg" alt="Margem do Tejo em Almada">
+                <img src="images/almada3.jpg" alt="Praia da Costa da Caparica">
+                <img src="images/almada4.jpeg" alt="Cristo-Rei">
+                <img src="images/almada5.jpg" alt="Cacilhas">
+                <img src="images/almada6.jpg" alt="Vista de Almada junto ao rio">
+                <img src="images/almada7.jpg" alt="Parque da Paz">
+                <img src="images/almada8.jpg" alt="Paisagem de Almada">
+
+            </div>
+        </section>
+<section class="video-background">
+
+    <video autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-text">
+        <h2>Almada</h2>
+        <p>Uma cidade junto ao Tejo</p>
+    </div>
+
+</section>
+<section class="parallax">
+
+    <h2>Almada</h2>
+    <p>Uma cidade com vista para o Tejo</p>
+
+</section>
+    </main>
+
+    <footer>
+        <p>DIW 2026</p>
+    </footer>
+
+</body>
+
+</html>

@@ -17,15 +17,6 @@ nav {
     text-align: center;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
 nav a {
     color: white;
     margin: 10px;
@@ -43,20 +34,19 @@ footer {
     text-align: center;
 }
 
+/* Responsividade */
 
 @media (max-width: 600px) {
 
-    nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
     nav a {
+        display: block;
         margin: 5px;
     }
 
 }
+
+/* Efeito nas imagens */
+
 img {
     transition: 0.5s;
 }
@@ -64,6 +54,8 @@ img {
 img:hover {
     transform: scale(1.1);
 }
+
+/* Grid da página de informação */
 
 .informacoes {
     display: grid;
@@ -83,6 +75,9 @@ img:hover {
     }
 
 }
+
+/* Vídeo */
+
 .video-background {
     position: relative;
     width: 100%;
@@ -104,8 +99,8 @@ img:hover {
     font-size: 3vw;
 }
 
+/* Parallax */
 
-/* PARALLAX */
 .parallax {
     height: 400px;
     background-image: url("images/almada1.jpg");

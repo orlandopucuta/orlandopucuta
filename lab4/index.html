@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 — Explora os eventos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">← Voltar ao início</a>
+        <h1>Explora os eventos</h1>
+        <p>Uma página que reage aos teus movimentos!</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. Conta os teus cliques</h2>
+            <p>Cliques: <span id="contador">0</span></p>
+            <button type="button" onclick="contar()">Clica aqui</button>
+        </section>
+
+        <section>
+            <h2>2. Muda o ambiente</h2>
+            <p id="mensagem-tema">Faz duplo clique no botão.</p>
+            <button type="button" ondblclick="mudarTema()">
+                Duplo clique para mudar o tema
+            </button>
+        </section>
+
+        <section>
+            <h2>3. Uma imagem com personalidade</h2>
+            <p id="mensagem-imagem">Passa o rato sobre a imagem.</p>
+            <img
+                id="imagem"
+                src="images/logo.png"
+                alt="Logótipo interativo"
+                onmouseover="destacarImagem()"
+                onmouseout="restaurarImagem()"
+            >
+        </section>
+
+        <section>
+            <h2>4. Segue o rato</h2>
+            <p id="posicao">Move o rato dentro da área abaixo.</p>
+            <div id="area-rato" onmousemove="mostrarPosicao(event)">
+                Explora esta área!
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Laboratório 4 · HTML, CSS e JavaScript</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

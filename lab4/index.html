@@ -3,54 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 4 — Explora os eventos</title>
+    <title>Laboratório 4</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <a href="../index.html">← Voltar ao início</a>
-        <h1>Explora os eventos</h1>
-        <p>Uma página que reage aos teus movimentos!</p>
+        <a href="../index.html">Voltar ao início</a>
     </header>
 
     <main>
-        <section>
-            <h2>1. Conta os teus cliques</h2>
-            <p>Cliques: <span id="contador">0</span></p>
-            <button type="button" onclick="contar()">Clica aqui</button>
-        </section>
+        <p id="mensagem"
+           onmouseover="agradecer()"
+           onmouseout="restaurar()">
+            1. Passa por aqui!
+        </p>
 
-        <section>
-            <h2>2. Muda o ambiente</h2>
-            <p id="mensagem-tema">Faz duplo clique no botão.</p>
-            <button type="button" ondblclick="mudarTema()">
-                Duplo clique para mudar o tema
-            </button>
-        </section>
+        <p>
+            <span id="texto-cor">2. Pinta-me!</span>
+            <button onclick="pintar('red')">Red</button>
+            <button onclick="pintar('green')">Green</button>
+            <button onclick="pintar('blue')">Blue</button>
+        </p>
 
-        <section>
-            <h2>3. Uma imagem com personalidade</h2>
-            <p id="mensagem-imagem">Passa o rato sobre a imagem.</p>
-            <img
-                id="imagem"
-                src="images/logo.png"
-                alt="Logótipo interativo"
-                onmouseover="destacarImagem()"
-                onmouseout="restaurarImagem()"
-            >
-        </section>
+        <p>
+            <label for="escrita">3. Experimenta escrever...</label>
+            <input id="escrita" type="text" oninput="mudarCorQuadro()">
+        </p>
 
-        <section>
-            <h2>4. Segue o rato</h2>
-            <p id="posicao">Move o rato dentro da área abaixo.</p>
-            <div id="area-rato" onmousemove="mostrarPosicao(event)">
-                Explora esta área!
-            </div>
-        </section>
+        <p>
+            <label for="cor-fundo">4. Escolhe uma cor em inglês:</label>
+            <input id="cor-fundo" type="text">
+            <button onclick="mudarFundo()">Submeter</button>
+        </p>
+
+        <p>
+            5. <button onclick="contar()">Conta!</button>
+            <span id="contador">0</span>
+        </p>
     </main>
 
     <footer>
-        <p>Laboratório 4 · HTML, CSS e JavaScript</p>
+        <img id="imagem" src="images/logo.png" alt="Logótipo"
+             ondblclick="aumentarImagem()"
+             onmousemove="moverNaImagem()">
+        <p id="aviso-imagem">
+            Move o rato sobre a imagem ou faz duplo clique.
+        </p>
     </footer>
 
     <script src="scripts/main.js"></script>

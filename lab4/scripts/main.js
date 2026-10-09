@@ -1,55 +1,58 @@
-// Guardamos as referências aos elementos uma única vez.
+const mensagem = document.querySelector("#mensagem");
+const textoCor = document.querySelector("#texto-cor");
+const escrita = document.querySelector("#escrita");
+const corFundo = document.querySelector("#cor-fundo");
 const contador = document.querySelector("#contador");
-const mensagemTema = document.querySelector("#mensagem-tema");
 const imagem = document.querySelector("#imagem");
-const mensagemImagem = document.querySelector("#mensagem-imagem");
-const posicao = document.querySelector("#posicao");
-const areaRato = document.querySelector("#area-rato");
+const avisoImagem = document.querySelector("#aviso-imagem");
 
 let cliques = 0;
-let temaEscuro = false;
+let indiceCor = 0;
+let imagemGrande = false;
 
-// Evento: click
+const cores = ["yellow", "orange", "pink", "lightblue", "lightgray"];
+
+function agradecer() {
+    mensagem.textContent = "1. Obrigado por passares!";
+}
+
+function restaurar() {
+    mensagem.textContent = "1. Passa por aqui!";
+}
+
+function pintar(cor) {
+    textoCor.style.color = cor;
+}
+
+function mudarCorQuadro() {
+    escrita.style.backgroundColor = cores[indiceCor];
+
+    indiceCor++;
+
+    if (indiceCor === cores.length) {
+        indiceCor = 0;
+    }
+}
+
+function mudarFundo() {
+    document.body.style.backgroundColor = corFundo.value.trim();
+}
+
 function contar() {
     cliques++;
     contador.textContent = cliques;
 }
 
-// Evento: dblclick
-function mudarTema() {
-    temaEscuro = !temaEscuro;
+function aumentarImagem() {
+    imagemGrande = !imagemGrande;
 
-    if (temaEscuro) {
-        document.body.style.backgroundColor = "#18213b";
-        document.body.style.color = "#ffffff";
-        mensagemTema.textContent = "Tema escuro ativado!";
+    if (imagemGrande) {
+        imagem.style.width = "160px";
     } else {
-        document.body.style.backgroundColor = "#eef2ff";
-        document.body.style.color = "#18213b";
-        mensagemTema.textContent = "Tema claro ativado!";
+        imagem.style.width = "80px";
     }
 }
 
-// Evento: mouseover
-function destacarImagem() {
-    imagem.style.transform = "scale(1.15) rotate(5deg)";
-    imagem.style.boxShadow = "0 8px 20px #5546d966";
-    mensagemImagem.textContent = "Olá! O rato está sobre a imagem.";
-}
-
-// Evento: mouseout
-function restaurarImagem() {
-    imagem.style.transform = "scale(1) rotate(0deg)";
-    imagem.style.boxShadow = "none";
-    mensagemImagem.textContent = "O rato saiu. Até à próxima!";
-}
-
-// Evento: mousemove
-function mostrarPosicao(evento) {
-    const limites = areaRato.getBoundingClientRect();
-    const x = Math.round(evento.clientX - limites.left);
-    const y = Math.round(evento.clientY - limites.top);
-
-    posicao.textContent = `Posição do rato: X = ${x}, Y = ${y}`;
-    areaRato.style.backgroundColor = `hsl(${x % 360}, 75%, 90%)`;
+function moverNaImagem() {
+    avisoImagem.textContent = "Estás a mover o rato sobre a imagem!";
 }

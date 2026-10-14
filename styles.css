@@ -58,7 +58,6 @@ nav a {
     margin-top: 15px;
 }
 
-
 .projetos {
     background-color: beige;
     padding: 60px 7%;
@@ -66,6 +65,7 @@ nav a {
 
 .cards {
     display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     margin-top: 30px;
 }
@@ -79,7 +79,6 @@ nav a {
 .card a {
     color: black;
 }
-
 
 .disciplina {
     padding: 60px 7%;
@@ -96,7 +95,6 @@ nav a {
     background-color: lightgray;
     padding: 30px;
 }
-
 
 @media (max-width: 600px) {
 
@@ -136,5 +134,4 @@ nav a {
     .wordcloud {
         width: 100%;
     }
-
 }

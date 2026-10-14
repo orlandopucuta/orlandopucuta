@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Lab 5</h1>
+
+        <section>
+            <h2 id="passa">1. Passa por aqui!</h2>
+        </section>
+
+
+        <section>
+
+            <h2 id="pinta">2. Pinta-me</h2>
+
+            <button class="color" data-color="salmon">Salmon</button>
+            <button class="color" data-color="dodgerblue">DodgerBlue</button>
+            <button class="color" data-color="orange">Orange</button>
+
+        </section>
+
+
+        <section>
+
+            <h2>3. Experimenta escrever...</h2>
+
+            <input id="escrever" type="text">
+
+        </section>
+
+
+        <section>
+
+            <h2>4. Escolha uma cor:</h2>
+
+            <select id="cor">
+                <option value="white">White</option>
+                <option value="salmon">Salmon</option>
+                <option value="dodgerblue">DodgerBlue</option>
+                <option value="orange">Orange</option>
+            </select>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                5. Contador:
+                <span id="contador">0</span>
+            </h2>
+
+            <button id="decrementar">-</button>
+            <button id="incrementar">Conta!</button>
+            <button id="reset">Reset</button>
+
+        </section>
+
+
+        <section>
+
+            <h2>6. Formulário</h2>
+
+            <form>
+
+                <input
+                    id="nome"
+                    type="text"
+                    placeholder="Insira o seu nome"
+                >
+
+                <input
+                    id="idade"
+                    type="number"
+                    placeholder="Insira a sua idade"
+                >
+
+                <input type="submit" value="Submit">
+
+            </form>
+
+            <p id="mensagem"></p>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                7. Automatic Counter:
+                <span id="automaticCounter">0</span>
+            </h2>
+
+        </section>
+
+
+        <section>
+
+            <h2>Select Flex</h2>
+
+            <label for="direcao">Flex direction:</label>
+
+            <select id="direcao">
+                <option value="row">row</option>
+                <option value="row-reverse">row-reverse</option>
+                <option value="column">column</option>
+                <option value="column-reverse">column-reverse</option>
+            </select>
+
+            <div id="flex-container">
+                <div class="bola bola1"></div>
+                <div class="bola bola2"></div>
+                <div class="bola bola3"></div>
+                <div class="bola bola4"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="scripts/main.js"></script>
+
+</body>
+
+</html>

@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -73,7 +74,7 @@ nav a {
 .card {
     background-color: white;
     padding: 25px;
-    width: 30%;
+    width: calc((100% - 50px) / 3);
 }
 
 .card a {

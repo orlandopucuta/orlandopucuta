@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigos</title>
+</head>
+<body>
+    <h1>Gestão de amigos</h1>
+
+    <button id="listar">Listar amigos</button>
+
+    <h2>Adicionar amigo</h2>
+
+    <form id="formulario">
+        <input id="nome" placeholder="Nome" required>
+        <input id="idade" type="number" placeholder="Idade"
+               min="1" step="1" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Consultar amigo</h2>
+
+    <form id="formularioConsulta">
+        <input id="amigoId" type="number" placeholder="ID do amigo"
+               min="1" step="1" required>
+        <button type="submit">Consultar</button>
+    </form>
+
+    <pre id="resultado"></pre>
+
+    <script>
+        const url = "https://amigos.pw.deisi.ulusofona.pt/amigos/";
+        const resultado = document.querySelector("#resultado");
+
+        function verificarResposta(response) {
+            if (!response.ok) {
+                throw new Error("Erro HTTP " + response.status);
+            }
+
+            return response.json();
+        }
+
+        function mostrarDados(dados) {
+            resultado.textContent = JSON.stringify(dados, null, 2);
+        }
+
+        function mostrarErro(erro) {
+            resultado.textContent = erro.message;
+        }
+
+        // GET: listar todos os amigos
+        function listarAmigos() {
+            fetch(url)
+                .then(verificarResposta)
+                .then(mostrarDados)
+                .catch(mostrarErro);
+        }
+
+        document.querySelector("#listar")
+            .addEventListener("click", listarAmigos);
+
+        // POST: adicionar um amigo
+        document.querySelector("#formulario")
+            .addEventListener("submit", event => {
+                event.preventDefault();
+
+                const amigo = {
+                    nome: document.querySelector("#nome").value,
+                    idade: Number(document.querySelector("#idade").value)
+                };
+
+                fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(amigo)
+                })
+                    .then(verificarResposta)
+                    .then(() => {
+                        document.querySelector("#formulario").reset();
+                        listarAmigos();
+                    })
+                    .catch(mostrarErro);
+            });
+
+        // GET: consultar um amigo pelo ID
+        document.querySelector("#formularioConsulta")
+            .addEventListener("submit", event => {
+                event.preventDefault();
+
+                const id = document.querySelector("#amigoId").value;
+
+                fetch(url + id + "/")
+                    .then(verificarResposta)
+                    .then(mostrarDados)
+                    .catch(mostrarErro);
+            });
+    </script>
+</body>
+</html>

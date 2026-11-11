@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Loja</h1>
+        <nav>
+            <a href="#produtos">Produtos</a>
+            <a href="#cesto">Cesto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="produtos">
+            <h2>Selecione os seus Produtos</h2>
+
+            <label for="filtro-categoria">Filtrar por categoria</label>
+            <select id="filtro-categoria">
+                <option value="">Todas as categorias</option>
+            </select>
+
+            <label for="ordenar-preco">Ordenar por preço</label>
+            <select id="ordenar-preco">
+                <option value="">Ordem original</option>
+                <option value="crescente">Preço crescente</option>
+                <option value="decrescente">Preço decrescente</option>
+            </select>
+
+            <label for="pesquisa-produto">Procurar</label>
+            <input id="pesquisa-produto" type="search" placeholder="Pesquisar por produto">
+
+            <div id="lista-produtos" class="lista"></div>
+        </section>
+
+        <section id="cesto">
+            <h2>Produtos Selecionados</h2>
+            <div id="lista-cesto" class="lista"></div>
+            <h2>Custo total: <span id="total">0.00</span> €</h2>
+
+            <form id="form-checkout">
+                <p>
+                    <label>
+                        <input id="estudante-deisi" type="checkbox">
+                        Sou estudante do DEISI
+                    </label>
+                </p>
+
+                <p>
+                    <label for="cupao">Cupão de desconto</label>
+                    <input id="cupao" type="text">
+                </p>
+
+                <p>
+                    <label for="nome-compra">Nome</label>
+                    <input id="nome-compra" type="text" autocomplete="name">
+                </p>
+
+                <button id="botao-comprar" type="submit" disabled>Comprar</button>
+            </form>
+
+            <p id="resultado-compra" role="status"></p>
+        </section>
+    </main>
+
+    <footer>2026</footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
